@@ -14,9 +14,10 @@ import {
 import SegmentedView from "teaset/components/SegmentedView/SegmentedView";
 import Label from "teaset/components/Label/Label";
 import RenewableFragment from "./fragment/RenewableFragment";
+import RenewableRankFragment from "./fragment/RenewableRankFragment";
 
 type Props = {};
-export default class PowerPage extends Component<Props> {
+export default class RenewablePage extends Component<Props> {
     render() {
         return (
             <SegmentedView style={{flex: 1}}
@@ -29,9 +30,7 @@ export default class PowerPage extends Component<Props> {
                 </SegmentedView.Sheet>
                 <SegmentedView.Sheet title='发电排行'
                                      activeTitleStyle={{color: Color.tab_text_color1}}>
-                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                        <Label type='detail' size='xl' text='Segment two'/>
-                    </View>
+                    <RenewableRankFragment/>
                 </SegmentedView.Sheet>
             </SegmentedView>
         );

@@ -26,7 +26,7 @@ import ElectricPage from "./pages/Home/ElectricPage";
 import WaterPage from "./pages/Home/WaterPage";
 import SteamPage from "./pages/Home/SteamPage";
 import GasPage from "./pages/Home/GasPage";
-import PowerPage from "./pages/Home/PowerPage";
+import RenewablePage from "./pages/Home/RenewablePage";
 import CarbonPage from "./pages/Home/CarbonPage";
 
 const store = configureStore();
@@ -107,7 +107,7 @@ const router = (...props) => (
                 <Scene component={WaterPage} hideNavBar={false} navBar={NavBar} key={'waterPage'} title={'用水详情'}/>
                 <Scene component={SteamPage} hideNavBar={false} navBar={NavBar} key={'steamPage'} title={'用汽详情'}/>
                 <Scene component={GasPage} hideNavBar={false} navBar={NavBar} key={'gasPage'} title={'用气详情'}/>
-                <Scene component={PowerPage} hideNavBar={false} navBar={NavBar} key={'powerPage'} title={'可再生能源'}/>
+                <Scene component={RenewablePage} hideNavBar={false} navBar={NavBar} key={'renewablePage'} title={'可再生能源'}/>
                 <Scene component={CarbonPage} hideNavBar={false} navBar={NavBar} key={'carbonPage'} title={'碳排放量'}/>
                 <Scene component={MainPage} hideNavBar={false} navBar={NavBar} key={'mainPage'} title={'mian'}/>
             </Stack>

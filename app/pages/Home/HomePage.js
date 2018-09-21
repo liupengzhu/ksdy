@@ -190,7 +190,7 @@ export default class HomePage extends Component<Props> {
                 Actions.gasPage();
                 break;
             case 'power':
-                Actions.powerPage();
+                Actions.renewablePage();
                 break;
             case 'carbon':
                 Actions.carbonPage();

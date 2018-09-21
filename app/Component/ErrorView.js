@@ -25,9 +25,9 @@ export default class ErrorView extends Component<Props> {
             >
                 <View style={styles.container}>
                     <Image style={{width: 150, height: 150}}
-                           source={require('../Image/loading_error.png')}
+                           source={Images.NoNetwork}
                     />
-                    <Text style={{color: color.text_n,marginTop:20}}>网络连接异常，点击刷新</Text>
+                    <Text style={{color: Color.home_text_l, marginTop: 20}}>网络连接异常，点击刷新</Text>
                 </View>
             </TouchableOpacity>
         );

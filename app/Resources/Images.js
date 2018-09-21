@@ -35,6 +35,7 @@ const Images = {
     Top2: require('./images/top2.png'),
     Top3: require('./images/top3.png'),
     Top4: require('./images/top4.png'),
+    NoNetwork: require('./images/no_network.png'),
 };
 
 export default Images;

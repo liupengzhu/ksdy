@@ -6,39 +6,26 @@ import {
     FlatList,
     StyleSheet
 } from 'react-native';
-import ItemSeparatorLine from "./ItemSeparatorLine";
 import EmptyView from "./EmptyView";
 import FootView from "./FootView";
+import ErrorView from "./ErrorView";
+import LoadingView from "./LoadingView";
 
 const MyFlatList = (props) => {
-    let itemSeparatorComponent = props.ItemSeparatorComponent
-        ? props.ItemSeparatorComponent
-        : props.hideItemSeparatorComponent ? <View/> : <ItemSeparatorLine/>;
-    return (
-
-        <FlatList style={styles.container}
-                  data={props.data}
-
-                  renderItem={props.renderItem}
-
-                  ItemSeparatorComponent={props.ItemSeparatorComponent}
+    let content = props.isLoading && !props.isError ? <LoadingView/> : props.isError ?
+        <ErrorView
+            error={props.errorMessage}
+            errorOnPress={props.errorOnPress}/>
+        : <FlatList style={styles.container}
             // 空布局
-                  ListEmptyComponent={<EmptyView/>}
-                  ListFooterComponent={<FootView
-                      showFoot={props.showFoot}
-                  />}
-                  onEndReached={props.onEndReached}
-                  onEndReachedThreshold={1}
-
-            //下拉刷新相关
-                  onRefresh={props.onRefresh}
-                  refreshing={props.refreshing}
-                  keyExtractor={(item, index) => {
-                      return item.id + ""
-                  }}
-
-        />
-    )
+                    ListEmptyComponent={<EmptyView/>}
+                    ListFooterComponent={<FootView
+                        showFoot={props.showFoot}
+                    />}
+                    onEndReachedThreshold={1}
+                    {...props}
+        />;
+    return content;
 };
 
 
