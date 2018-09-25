@@ -216,8 +216,8 @@ export default class CarbonFragment extends Component<Props> {
                                     [
                                         {
                                             type: 'value',
-                                            axisLabel: { //调整x轴的lable
-                                                //formatter: `{value}${ratio}`,//格式化y轴数据
+                                            axisLabel: {
+                                                formatter: `{value}${ratio}`,//格式化y轴数据
 
                                             },
                                         }
@@ -226,7 +226,9 @@ export default class CarbonFragment extends Component<Props> {
                                 series: barData,
                                 grid: {
                                     top: data.chart_type == "bar" ? '15%' : '20%',
-                                    left: '18%'
+                                    left: '3%',
+                                    containLabel: true,
+                                    right:'3%',
                                 },
                                 tooltip: {
                                     trigger: 'axis',

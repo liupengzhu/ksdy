@@ -123,7 +123,7 @@ export default class HomePage extends Component<Props> {
                                       color={Color.home_color7}
                                       icon={Images.HomeGenerationIcon}
                                       onPress={() => {
-                                          this._onItemPress('power');
+                                          this._onItemPress('renewable');
                                       }}
                                       unit={this.state.data.power_generated.ratio + this.state.unit.power}
                             />
@@ -155,7 +155,7 @@ export default class HomePage extends Component<Props> {
                             <Text style={{color: Color.home_text_l, fontSize: 8}}>以上数据均为当月数据</Text>
                         </View>
                         <TouchableOpacity activeOpacity={0.5} onPress={() => {
-                            this._buttonOnPress()
+                            this._onItemPress('power');
                         }}>
                             <View style={styles.button}>
                                 <View style={{width: 15}}></View>
@@ -189,19 +189,18 @@ export default class HomePage extends Component<Props> {
             case 'gas':
                 Actions.gasPage();
                 break;
-            case 'power':
+            case 'renewable':
                 Actions.renewablePage();
                 break;
             case 'carbon':
                 Actions.carbonPage();
                 break;
+            case 'power':
+                Actions.powerPage();
+                break;
             default:
                 break;
         }
-    }
-
-    _buttonOnPress() {
-
     }
 
     componentDidMount() {

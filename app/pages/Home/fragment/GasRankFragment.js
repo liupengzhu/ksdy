@@ -280,7 +280,6 @@ export default class GasRankFragment extends Component<Props> {
                         ;
                     })
                     .catch((error) => {
-                        console.log(error);
                         this.setState({
                             isRefreshing: false,
                             isLoading: false,

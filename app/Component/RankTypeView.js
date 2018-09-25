@@ -20,7 +20,7 @@ export default class RankTypeView extends Component<Props> {
             <View style={[styles.container, this.props.style]}>
                 <TouchableOpacity
                     style={{flex: 1}}
-                    activeOpacity={0.5}
+                    activeOpacity={0.8}
                     onPress={() => {
                         this.setState({checked: 'company'})
                     }}>
@@ -38,7 +38,7 @@ export default class RankTypeView extends Component<Props> {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={{flex: 1}}
-                    activeOpacity={0.5}
+                    activeOpacity={0.8}
                     onPress={() => {
                         this.setState({checked: 'industry'})
                     }}>

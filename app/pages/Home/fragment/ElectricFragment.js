@@ -303,7 +303,9 @@ export default class ElectricFragment extends Component<Props> {
                                 grid: {
 
                                     top: data.chart_type == "bar" ? '15%' : '20%',
-                                    left: '18%'
+                                    left: '3%',
+                                    containLabel: true,
+                                    right:'3%',
 
                                 },
                                 tooltip: {

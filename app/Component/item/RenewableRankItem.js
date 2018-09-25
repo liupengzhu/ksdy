@@ -5,12 +5,12 @@ export default class RenewableRankItem extends Component {
 
     render() {
         let {
-            history_average,
+            last,
             range,
             rank,
-            total_generated,
-            company_name,
-            installed_capacity,
+            current,
+            company,
+            generating_capacity,
         } = this.props.data;
         let ratio = this.props.ratio;
         let source = range == '/' || range == null ? Images.None : range > 0 ? Images.Rise : Images.Decline;
@@ -24,27 +24,28 @@ export default class RenewableRankItem extends Component {
                 <View style={styles.item}>
                     <Text style={styles.itemKey}>企业名称</Text>
                     <Text
-                        style={styles.itemValue}>{company_name}</Text>
+                        style={styles.itemValue}>{company}</Text>
                 </View>
                 <View style={styles.item}>
                     <Text style={styles.itemKey}>装机容量(kVA)</Text>
                     <Text
                         style={styles.itemValue}>
-                        {installed_capacity == "/" || installed_capacity == null ? "-" : parseInt(installed_capacity).toFixed(2)}
+                        {generating_capacity == "/" ||
+                        generating_capacity == null ? "-" : parseInt(generating_capacity).toFixed(2)}
                     </Text>
                 </View>
                 <View style={styles.item}>
                     <Text style={styles.itemKey}>实际发电量{ratio}</Text>
                     <Text
                         style={styles.itemValue}>
-                        {total_generated == "/" || total_generated == null ? "-" : total_generated.toFixed(2)}
+                        {current == "/" || current == null ? "-" : current.toFixed(2)}
                     </Text>
                 </View>
                 <View style={styles.item}>
                     <Text style={styles.itemKey}>历史同期发电量{ratio}</Text>
                     <Text
                         style={styles.itemValue}>
-                        {history_average == "/" || history_average == null ? "-" : history_average.toFixed(2)}
+                        {last == "/" || last == null ? "-" : last.toFixed(2)}
                     </Text>
                 </View>
                 <View style={styles.item}>
